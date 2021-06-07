@@ -82,8 +82,9 @@ console.log(lowerChoice)
   console.log(passwordChoice)
 
   for (var i = 0; i < passwordLength; i++) {
-    password =+ passwordChoice[Math.floor(Math.random() * passwordChoice)];
+    password += passwordChoice[Math.floor(Math.random() * passwordChoice.length)];
   }
   
   return password; 
 }
+
