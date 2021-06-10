@@ -42,10 +42,8 @@ function generatePassword() {
     window.alert("Your password length must be between 8 & 128 characters. Please try again.") 
     return ""
     }
-
-  console.log(passwordLength)
   
-  // creating variable "yes/no" boolean confirmations which add the variables into a string if confirmed
+  // creating variable "yes/no" boolean confirmations which add the variables into a string if true
 
   var lowerChoice = confirm("Would you like to throw in a few lowercase characters?");
 
@@ -53,15 +51,11 @@ function generatePassword() {
     passwordChoice += lowerCase; 
   }
 
-console.log(lowerChoice)
-
   var upperChoice = confirm("How about some uppercase characters?");
 
   if (upperChoice) {
     passwordChoice += upperCase;
   } 
-
-  console.log(upperChoice)
 
   var numbersChoice = confirm("Spice things up with some numbers?");
 
@@ -69,17 +63,13 @@ console.log(lowerChoice)
     passwordChoice += numbers; 
   }
 
-  console.log(numbersChoice)
-
   var symbolChoice = confirm("Secure yourself with symbols?");
 
   if (symbolChoice) {
     passwordChoice += symbols;
   }
 
-  console.log(symbolChoice)
-
-  console.log(passwordChoice)
+  // This for loop is used to generate the password by replacing password with passwordChoice
 
   for (var i = 0; i < passwordLength; i++) {
     password += passwordChoice[Math.floor(Math.random() * passwordChoice.length)];
